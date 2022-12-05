@@ -1,41 +1,30 @@
 import {useState} from 'react'
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 
-const Form = () => {
+const FormForAuth = ({handleClick}) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');   
     return (
         <div>
-            <form>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input 
-                    type="email" 
-                    class="form-control" 
-                    id="exampleInputEmail1" 
-                    aria-describedby="emailHelp"
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
-                />
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1"/>
-            </div>
-            <div class="mb-3 form-check">
-                <input 
-                    type="checkbox" 
-                    class="form-check-input" 
-                    id="exampleCheck1"
-                    onChange={(e) => setPass(e.target.value)}
-                    value={pass} 
-                />
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            <input
+            type='email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="email"
+            />
+            <input
+            type='password'
+            value={pass}
+            onChange={(e) => setPass(e.target.value)}
+            placeholder="password"
+            />
+            <button
+                onClick={handleClick}
+            >
+                Submit
+            </button>
         </div>
     )
 }
+
+export {FormForAuth}

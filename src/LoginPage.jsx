@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {Login} from './components/Login'
 
 export const LoginPage = () => (
     <div>
         <h1>Login</h1>
+        <Login />
         <p>
             Or <Link to="/register">register</Link>
         </p>
